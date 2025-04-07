@@ -26,13 +26,26 @@ user.email=halzcreate1215@gmail.com
 ```
 
 クローン
-
+```
 git clone https://github.com/halchil/GitHub_Basic.git
 Cloning into 'GitHub_Basic'...
 remote: Enumerating objects: 3, done.
 remote: Counting objects: 100% (3/3), done.
 remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
 Receiving objects: 100% (3/3), done.
+```
+
+ローカルでcloneした時
+
+```
+git clone https://github.com/ユーザー名/awesome-project.git
+
+このときGitは勝手にこう設定されてる↓
+設定	内容
+リモート名	origin（Gitが自動で命名）
+リモートブランチ	origin/main（GitHubのmainブランチ）
+ローカルブランチ	main（クローン時にチェックアウトされてる）
+```
 
 # Commit CLI
 
@@ -51,6 +64,143 @@ git init
 [結果]
 Reinitialized existing Git repository in C:/Users/halzc/OneDrive/デスクトップ/GitHub_Basic/.git/
 ```
+
+文ランチを切る
+```
+[実行コマンド]
+git checkout -b feature/test-branch
+
+[結果]
+Switched to a new branch 'feature/test-branch'
+
+[確認コマンド]
+git branch
+
+[結果]
+* feature/test-branch
+  list
+  main
+
+[確認コマンド]
+git checkout main
+
+[結果]
+M       README.md
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+[確認コマンド]
+git branch       
+
+[結果]
+  feature/test-branch
+  list
+* main
+
+
+```
+
+
+次に変更ステージングする
+
+```
+[実行コマンド]
+git add . 
+
+[結果]
+何も表示されない
+```
+
+次に、コミットする。
+
+```
+[実行コマンド]
+git commit -m "firtst commit"
+
+[結果]
+[main 20b1156] firtst commit
+ 1 file changed, 102 insertions(+), 1 deletion(-)
+```
+
+次に、リモートリポジトリへ変更をプッシュする。
+コマンドは以下となる。
+```
+git push [リモートリポジトリ名(デフォルトでorigin)] [ローカルブランチ名]
+```
+
+
+```
+[実行コマンド]
+git push origin feature/test-branch
+
+[結果]
+
+```
+
+pushする前のイメージは以下である。
+
+```
+ローカルPC
+└── main ブランチ（変更済み）
+
+GitHub（origin）
+└── main ブランチ（まだ古い状態）
+```
+
+pushするとこうなる
+
+```
+ローカルPC
+└── main ブランチ（最新）
+
+GitHub（origin）
+└── main ブランチ（最新に更新された！）
+```
+
+
+
+
+# TroubleShoot
+
+## 
+
+```
+[実行コマンド]
+git commit -m "firtst commit"     
+
+[結果]
+On branch feature/test-branch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        img/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+```
+
+
+
+## 
+
+```
+
+git push origin future/test-branch
+error: src refspec future/test-branch does not match any
+error: failed to push some refs to 'https://github.com/halchil/GitHub_Basic.git'
+
+
+```
+これは「ブランチ名のタイプミス」か「コミットしてないからpushできない」どっちかが原因。
+
+
+
+
 ## 2. GitHubリポジトリをリモートに設定する
 
 
