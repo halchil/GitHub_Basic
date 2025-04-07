@@ -2,6 +2,8 @@
 
 #事前準備
 
+[](./img/staging.png)
+
 ```
 [実行コマンド]
 git config --list
@@ -129,15 +131,27 @@ git commit -m "firtst commit"
 git push [リモートリポジトリ名(デフォルトでorigin)] [ローカルブランチ名]
 ```
 
-
 ```
 [実行コマンド]
 git push origin feature/test-branch
 
 [結果]
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (9/9), 11.79 KiB | 5.89 MiB/s, done.
+Total 9 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+remote:
+remote: Create a pull request for 'feature/test-branch' on GitHub by visiting:
+remote:      https://github.com/halchil/GitHub_Basic/pull/new/feature/test-branch
+remote:
+To https://github.com/halchil/GitHub_Basic.git
+ * [new branch]      feature/test-branch -> feature/test-branch
+
 
 ```
-
 pushする前のイメージは以下である。
 
 ```
@@ -155,7 +169,7 @@ pushするとこうなる
 └── main ブランチ（最新）
 
 GitHub（origin）
-└── main ブランチ（最新に更新された！）
+└── main ブランチ（最新に更新される。）
 ```
 
 
@@ -163,7 +177,9 @@ GitHub（origin）
 
 # TroubleShoot
 
-## 
+## Changes not staged for commit
+
+コミットしようとしたけど、addしてないからコミット対象が何もない。
 
 ```
 [実行コマンド]
@@ -186,67 +202,16 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 
 
-## 
+## branch does not match any
+
+これは「ブランチ名のタイプミス」か「コミットしてないからpushできない」どっちかが原因。
 
 ```
-
+[実行コマンド]
 git push origin future/test-branch
+
+[結果]
 error: src refspec future/test-branch does not match any
 error: failed to push some refs to 'https://github.com/halchil/GitHub_Basic.git'
 
-
 ```
-これは「ブランチ名のタイプミス」か「コミットしてないからpushできない」どっちかが原因。
-
-
-
-
-## 2. GitHubリポジトリをリモートに設定する
-
-
-GitHubのリポジトリURLをコピーする。
-例: `https://github.com/username/my-repo.git`
-
-そのURLを使ってリモートリポジトリを設定する。
-
-```
-$ git remote add origin https://github.com/username/my-repo.git
-```
-
-## 3. ファイルをステージングしてコミットする
-
-リポジトリ内のファイルをすべてステージングする。
-
-```
-$ git add .
-```
-ファイルをコミットする。
-
-```
-$ git commit -m "Initial commit"
-```
-
-## 4. GitHubにファイルをプッシュする
-
-リポジトリの内容をGitHubにプッシュする。
-```
-$ git branch -M main
-```
-表示
-```
-$ git branch
-```
-変更
-
-```
-$ git checkout test-branch
-```
--M オプションは、ブランチの名前を強制的に変更するためのもの
-
-```
-$ git push -u origin test-branch
-
-
-
-# Commit VSCode
-
