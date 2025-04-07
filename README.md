@@ -1,7 +1,6 @@
 # 事前準備
 
-![img](./img/staging.png)
-
+![img](./img/GitHub Setting.jpg)
 
 ```
 [実行コマンド]
@@ -26,9 +25,14 @@ user.name=halchil
 user.email=halzcreate1215@gmail.com
 ```
 
-クローン
+`user.name`や`user.email`などは設定したもの。
+
+クローンする。
 ```
+[実行コマンド]
 git clone https://github.com/halchil/GitHub_Basic.git
+
+[結果]
 Cloning into 'GitHub_Basic'...
 remote: Enumerating objects: 3, done.
 remote: Counting objects: 100% (3/3), done.
@@ -36,28 +40,30 @@ remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
 Receiving objects: 100% (3/3), done.
 ```
 
-ローカルでcloneした時
+ローカルでcloneした時、Gitは自動的に以下のように設定されてる.
 
 ```
+[実行コマンド]
 git clone https://github.com/ユーザー名/awesome-project.git
 
-このときGitは勝手にこう設定されてる↓
+このとき
 設定	内容
 リモート名	origin（Gitが自動で命名）
 リモートブランチ	origin/main（GitHubのmainブランチ）
 ローカルブランチ	main（クローン時にチェックアウトされてる）
 ```
+のように設定が行われる.
 
 # Commit CLI
 
-## 1. サーバでリポジトリを初期化する
 
-サーバ内でリポジトリにしたいディレクトリに移動する。
+サーバ内でリポジトリにしたいディレクトリに移動する.
 
 ```
-$ cd /path/to/your/files
+[実行コマンド]
+cd /path/to/your/files
 ```
-次にGitリポジトリを初期化する。
+次にGitリポジトリを初期化する.
 ```
 [実行コマンド]
 git init
@@ -66,7 +72,7 @@ git init
 Reinitialized existing Git repository in C:/Users/halzc/OneDrive/デスクトップ/GitHub_Basic/.git/
 ```
 
-文ランチを切る
+文ランチを切る.
 ```
 [実行コマンド]
 git checkout -b feature/test-branch
@@ -99,11 +105,10 @@ git branch
   list
 * main
 
-
 ```
 
 
-次に変更ステージングする
+次に変更ステージングする.
 
 ```
 [実行コマンド]
@@ -113,7 +118,7 @@ git add .
 何も表示されない
 ```
 
-次に、コミットする。
+次に、コミットする.
 
 ```
 [実行コマンド]
@@ -124,8 +129,8 @@ git commit -m "firtst commit"
  1 file changed, 102 insertions(+), 1 deletion(-)
 ```
 
-次に、リモートリポジトリへ変更をプッシュする。
-コマンドは以下となる。
+次に、リモートリポジトリへ変更をプッシュする.
+コマンドは以下となる.
 ```
 git push [リモートリポジトリ名(デフォルトでorigin)] [ローカルブランチ名]
 ```
@@ -151,7 +156,7 @@ To https://github.com/halchil/GitHub_Basic.git
 
 
 ```
-pushする前のイメージは以下である。
+pushする前のイメージは以下である.
 
 ```
 ローカルPC
