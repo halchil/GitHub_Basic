@@ -1,8 +1,6 @@
-# GitHub_Basic
+# 事前準備
 
-#事前準備
-
-[](./img/staging.png)
+[img](./img/staging.png)
 
 ```
 [実行コマンド]
