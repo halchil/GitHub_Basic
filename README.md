@@ -1,6 +1,7 @@
 # 事前準備
 
-[img](./img/staging.png)
+![img](./img/staging.png)
+
 
 ```
 [実行コマンド]
