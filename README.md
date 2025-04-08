@@ -56,7 +56,6 @@ git clone https://github.com/ユーザー名/awesome-project.git
 
 # Commit CLI
 
-
 サーバ内でリポジトリにしたいディレクトリに移動する.
 
 ```
@@ -72,7 +71,7 @@ git init
 Reinitialized existing Git repository in C:/Users/halzc/OneDrive/デスクトップ/GitHub_Basic/.git/
 ```
 
-文ランチを切る.
+ブランチを切る.
 ```
 [実行コマンド]
 git checkout -b feature/test-branch
@@ -106,7 +105,6 @@ git branch
 * main
 
 ```
-
 
 次に変更ステージングする.
 
